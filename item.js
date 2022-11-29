@@ -1,6 +1,5 @@
 import { data } from './emoji.js'
 
-
 function card({symbol, title, keywords}) {
 
   const lItem = document.createElement('div');
@@ -24,19 +23,17 @@ return lItem
 
 }
 
-const newCart = document.body.querySelector('.list__wraper')
+const cards = document.body.querySelector('.list__wraper');
+data.forEach((item) => cards.append(card(item)));
 
-data.forEach((el) => newCart.append(card(el)))
+let input = document.querySelector('.search__data')
 
+function searchData() {
+  const d = data.filter(el => el.title.includes(input.value)||el.keywords.includes(input.value) )
+  cards.innerHTML = ''
+  d.forEach((item) => cards.append(card(item)));
+  console.log(d)
 
+} 
 
-
-
-
-
-
-
-
-//console.log(card())
-
-// document.body.querySelector('.list__wraper').append(card);
+input.addEventListener('input', searchData)
