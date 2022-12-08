@@ -1,3 +1,4 @@
+/*
 export let data = [
   {
     title: '100',
@@ -9131,3 +9132,4 @@ export let data = [
     keywords: 'regional indicator symbol letter a',
   },
 ];
+*/
